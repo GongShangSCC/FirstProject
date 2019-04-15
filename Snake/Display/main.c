@@ -1,10 +1,8 @@
-#include <stdio.h>
-#include <stdlib.h>
-#define HEIGHT 20
-#define WIDTH 20
+#include "snake.h"
+
 
 int main()
 {
-
+    void snake()
     return 0;
 }

@@ -20,101 +20,98 @@ void Input() {
 }
 void fruitPosition()
 {
-    if (coordinates[length].x == oranges.x && coordinates[length].y == oranges.y )
-    {
 		oranges.x = rand() % WIDTH;
 		oranges.y = rand() % HEIGHT;
-		score++;
-	}
 }
 
 void Logic()
 {
     coordinates tmp;
-    tmp.x = coordinates[length].x;
-    tmp.y = coordinates[length].y;
+    tmp.x = snake[length].x;
+    tmp.y = snake[length].y;
     int i = 0, j;
 	switch (dir)
 	{
         case LEFT:
-            if((coordinates[length].x - 1 == oranges.x && coordinates[length].y == oranges.y ))
+            if((snake[length].x - 1 == oranges.x && snake[length].y == oranges.y ))
             {
-                coordinates[length + 1].x = oranges.x;
-                coordinates[length + 1].y = oranges.y;
+                snake[length + 1].x = oranges.x;
+                snake[length + 1].y = oranges.y;
                 length++;
                 fruitPosition();
+                score++;
             }
             else
             {
-                coordinates[length].x--;
+                snake[length].x--;
                 for(i = length - 1;i >= 0;i--)
                 {
-                    j = coordinates[i].x;
-                    coordinates[i].x = tmp.x;
+                    j = snake[i].x;
+                    snake[i].x = tmp.x;
                     tmp.x = j;
-                    j = coordinates[i].y;
-                    coordinates[i].y = tmp.y;
+                    j = snake[i].y;
+                    snake[i].y = tmp.y;
                     tmp.y = j;
                 }
             }
 
             break;
         case RIGHT:
-            if((coordinates[length].x + 1 == oranges.x && coordinates[length].y == oranges.y ))
+            if((snake[length].x + 1 == oranges.x && snake[length].y == oranges.y ))
             else
             {
-                coordinates[length].x++;
+                snake[length].x++;
                 for(i = length - 1;i >= 0;i--)
                 {
-                    j = coordinates[i].x;
-                    coordinates[i].x = tmp.x;
+                    j = snake[i].x;
+                    snake[i].x = tmp.x;
                     tmp.x = j;
-                    j = coordinates[i].y;
-                    coordinates[i].y = tmp.y;
+                    j = snake[i].y;
+                    snake[i].y = tmp.y;
                     tmp.y = j;
                 }
             }
             break;
         case UP:
-            if((coordinates[length].x == oranges.x && coordinates[length].y - 1 == oranges.y ))
+            if((snake[length].x == oranges.x && snake[length].y - 1 == oranges.y ))
             else
             {
-                coordinates[length].y--;
+                snake[length].y--;
                 for(i = length - 1;i >= 0;i--)
                 {
-                    j = coordinates[i].x;
-                    coordinates[i].x = tmp.x;
+                    j = snake[i].x;
+                    snake[i].x = tmp.x;
                     tmp.x = j;
-                    j = coordinates[i].y;
-                    coordinates[i].y = tmp.y;
+                    j = snake[i].y;
+                    snake[i].y = tmp.y;
                     tmp.y = j;
                 }
             }
             break;
         case DOWN:
-            if((coordinates[length].x == oranges.x && coordinates[length].y + 1 == oranges.y ))
+            if((snake[length].x == oranges.x && snake[length].y + 1 == oranges.y ))
             else
             {
-                coordinates[length].y++;
+                snake[length].y++;
                 for(i = length - 1;i >= 0;i--)
                 {
-                    j = coordinates[i].x;
-                    coordinates[i].x = tmp.x;
+                    j = snake[i].x;
+                    snake[i].x = tmp.x;
                     tmp.x = j;
-                    j = coordinates[i].y;
-                    coordinates[i].y = tmp.y;
+                    j = snake[i].y;
+                    snake[i].y = tmp.y;
                     tmp.y = j;
                 }
             }
             break;
 	}
-	if (coordinates[length].x >= WIDTH)
-		coordinates[length].x = 0;
-	if (coordinates[length].x < 0)
-		coordinates[length].x = WIDTH;
-	if (coordinates[length].y >= HEIGHT)
-		coordinates[length].y = 0;
-	if (coordinates[length].y < 0)
-		coordinates[length].y = HEIGHT;
+	if (snake[length].x >= WIDTH)
+		snake[length].x = 0;
+	if (snake[length].x < 0)
+		snake[length].x = WIDTH;
+	if (snake[length].y >= HEIGHT)
+		snake[length].y = 0;
+	if (snake[length].y < 0)
+		snake[length].y = HEIGHT;
 
 }

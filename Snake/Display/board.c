@@ -12,18 +12,22 @@ void initializeBoard(char board[][])
     }
 }
 
-void setFruit(char board[][],fruit oranges)
+void setFruit()
 {
     board[oranges.x][oranges.y] = '$';
 }
 
-void setSnake(char board[][],coordinates * snake , int iSize)
+void setSnake()
 {
     int i = 0;
-    for(; i< iSize; i++)
+    for(; i< length; i++)
     {
         board[snake[i].x][snake[i].y] = '%';
     }
+}
+void isStatus()
+{
+    return 1;
 }
 
 void printBoard()
@@ -65,37 +69,7 @@ void printBoard()
     }
 }
 
-void menuFunction()
-{
-    char userChoice;
-    while(1)
-    {
-        printf("Please choose what you want to do.\n");
-        printf("Type b or B to start the game.\n");
-        printf("Type s or S to go to the settings.\n");
-        printf("Type f or F to go out of the game.\n");
-        scanf("%c",&userChoice);
-        userChoice = tolower(userChoice);
-        switch(userChoice)
-        {
-            case 'b' :
-                // Start the game
-                snake();
-                break;
-            case 's':
-                // Go to the settings
-                //settings();
-                break;
-            case 'f':
-                // Go out of the game
-                exit(0);
-                break;
-            default:
-                printf("Please enter your choice.\n");
-                break;
-        }
-    }
-}
+
 
 /*void settings()
 {
