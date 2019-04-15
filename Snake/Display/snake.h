@@ -5,13 +5,14 @@
 #include <random>
 #include <stdlib.h>
 #include <windows.h>
-
+#define MAX 400
 #define HEIGHT 20
 #define WIDTH 20
+
 enum gameOver{TRUE = 0, FALSE = 1};
 enum eDirection { STOP = 0, LEFT, RIGHT, UP, DOWN};
 enum status{PAUSED = 0, STARTED = 1};
-int score;
+int score = 0;
 void menuFunction();
 void changeSnakeSpeed();
 void changeSnakeColor();
@@ -24,7 +25,8 @@ void setFruit(char board[][],fruit oranges);
 void setSnake(char board[][],coordinates * snake , int iSize);
 void printBoard();
 void setBoard(short board[][]);
-void snake()
+void snake();
+void fruitPosition();
 
 status stat;
 //Hold the array position of the fruit
@@ -41,6 +43,8 @@ typedef struct coordinates
     short y;
 }coordinates;
 
+coordinates snake[MAX];
+int length = 0;
 char board[HEIGHT][WIDTH];
 fruit oranges;
 void Input();
