@@ -20,7 +20,7 @@ void setFruit()
 void setSnake()
 {
     int i = 0;
-    for(; i< info[0].length; i++)
+    for(; i<= info[0].length; i++)
     {
         board[snake[i].x][snake[i].y] = '%';
     }
@@ -49,8 +49,8 @@ void printBoard()
     }
     else if(isStatus() == 1)
     {
-        system("cls");
-        for(i = 0;i < 22;i++)
+       system("cls");
+        for(i = 0;i < 21;i++)
         {
             printf("#");
         }
@@ -65,8 +65,9 @@ void printBoard()
         }
         for(i = 0;i < 22;i++)
         {
-            printf("#\n");
+            printf("#");
         }
+        printf("\n");
     }
 }
 

@@ -5,9 +5,10 @@ void snakes()
     char userChoice;
     info[0].length = 0;
     fruitPosition();
-    snake[ info[0].length].x = 10;
-    snake[ info[0].length].y = 10;
+    snake[info[0].length].x = 10;
+    snake[info[0].length].y = 10;
     info[0].score = 0;
+    int c;
     while(1)
     {
         printf("Please choose what you want to do.\n");
@@ -22,11 +23,16 @@ void snakes()
                 // Start the game
                 fruitPosition();
                 initializeBoard();
-                printBoard();
-                Input();
-                Logic();
-                setBoard();
-                printBoard();
+                while(1)
+                {
+                        initializeBoard();
+                        setBoard();
+                        printBoard();
+                        Input();
+                        Logic();
+                        for(c = 0; c< 10000; c++);
+                }
+
                 return;
                 break;
             case 's':

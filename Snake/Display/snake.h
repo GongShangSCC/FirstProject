@@ -4,6 +4,7 @@
 #include <conio.h>
 //#include <random>
 #include <stdlib.h>
+#include <ctype.h>
 #include <windows.h>
 #define MAX 400
 #define HEIGHT 20

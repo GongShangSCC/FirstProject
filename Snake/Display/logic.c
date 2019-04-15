@@ -1,9 +1,31 @@
 #include "snake.h"
-
-void Input()
+//gonna wait on this function a bit
+/*void Input()
 {
 	if (_kbhit()) {
 		switch (_getch()) {
+		case 'a':
+			dir = LEFT;
+			break;
+		case 'd':
+			dir = RIGHT;
+			break;
+		case 'w':
+			dir = UP;
+			break;
+		case 's':
+			dir = DOWN;
+			break;
+		}
+	}
+}*/
+void Input()
+{
+    fflush(stdin);
+	if (_kbhit())
+    {
+		switch (_getch())
+		{
 		case 'a':
 			dir = LEFT;
 			break;
@@ -34,7 +56,7 @@ void Logic()
     int i = 0, j;
 	switch (dir)
 	{
-        case LEFT:
+        case UP:
             if((snake[info[0].length].x - 1 == oranges.x && snake[info[0].length].y == oranges.y ))
             {
                 snake[info[0].length + 1].x = oranges.x;
@@ -58,7 +80,7 @@ void Logic()
             }
 
             break;
-        case RIGHT:
+        case DOWN:
             if((snake[info[0].length].x + 1 == oranges.x && snake[info[0].length].y == oranges.y ))
             {
                 snake[info[0].length + 1].x = oranges.x;
@@ -81,7 +103,7 @@ void Logic()
                 }
             }
             break;
-        case UP:
+        case LEFT:
             if((snake[info[0].length].x == oranges.x && snake[info[0].length].y - 1 == oranges.y ))
             {
                 snake[info[0].length + 1].x = oranges.x;
@@ -104,7 +126,7 @@ void Logic()
                 }
             }
             break;
-        case DOWN:
+        case RIGHT:
             if((snake[info[0].length].x == oranges.x && snake[info[0].length].y + 1 == oranges.y ))
             {
 
