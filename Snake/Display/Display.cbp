@@ -34,6 +34,9 @@
 		<Unit filename="board.c">
 			<Option compilerVar="CC" />
 		</Unit>
+		<Unit filename="logic.c">
+			<Option compilerVar="CC" />
+		</Unit>
 		<Unit filename="main.c">
 			<Option compilerVar="CC" />
 		</Unit>

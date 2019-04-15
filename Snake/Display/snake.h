@@ -7,7 +7,7 @@
 #include <windows.h>
 
 #define HEIGHT 20
-#define cccccc 20
+#define WIDTH 20
 enum gameOver{TRUE = 0, FALSE = 1};
 enum eDirection { STOP = 0, LEFT, RIGHT, UP, DOWN};
 enum status{PAUSED = 0, STARTED = 1};
