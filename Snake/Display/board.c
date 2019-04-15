@@ -1,4 +1,5 @@
 #include "snake.h"
+
 void initializeBoard(char board[][])
 {
     int i = 0,j = 0;
@@ -27,88 +28,76 @@ void setSnake(char board[][],coordinates * snake , int iSize)
 
 void printBoard()
 {
-    char board[HEIGHT][WIDTH];
+    setBoard();
     int i = 0, j = 0;
-    printf("Showing UI:%d \t", score);
-    if(!isGameOver())
+    printf("Showing Score:%d \n", score);
+    if(isGameOver())
     {
-        system("clear");
+        system("cls");
         printf("GAMEOVER");
-        restart();
+        exit(0);
     }
     else if(isStatus() == 0)
     {
-        system("clear");
+        system("cls");
         printf("PAUSE");
     }
-    else if()
+    else if(isStatus() == 1)
     {
-        board = setBoard();
-        printf("|")
-        for(i = 0;i < 20;i++)
+        system("cls");
+        for(i = 0;i < 22;i++)
         {
-            printf("_")
+            printf("#");
         }
-        printf("|\n")
         for(i = 0;i < 20;i++)
         {
-            printf("|")
+            printf("#");
             for(j = 0;j < 20;j++)
             {
                 printf("%c", board[i][j]);
             }
-            printf("|\n")
+            printf("#\n");
         }
-        printf("|")
-        for(i = 0;i < 20;i++)
+        for(i = 0;i < 22;i++)
         {
-            printf("_")
+            printf("#\n");
         }
-        printf("|\n")
     }
-
 }
-
-
-
-
-
-void finishGame()
-{
-	exit(0);
-}
-
 
 void menuFunction()
 {
     char userChoice;
-    printf("Please choose what you want to do.\n");
-    printf("Type b or B to start the game.\n");
-    printf("Type s or S to go to the settings.\n");
-    printf("Type f or F to go out of the game.\n");
-    scanf("%c",&userChoice);
-	userChoice = tolower(userChoice);
-	switch(userChoice)
-	{
-		case 'b' :
-            // Start the game
-            //startGame();
-            break;
-        case 's':
-            // Go to the settings
-            settings();
-        	break;
-        case 'f':
-            // Go out of the game
-            finishGame();
-            break;
-        default:
-            printf("Please enter your choice.\n");
-            break;
-	}
+    while(1)
+    {
+        printf("Please choose what you want to do.\n");
+        printf("Type b or B to start the game.\n");
+        printf("Type s or S to go to the settings.\n");
+        printf("Type f or F to go out of the game.\n");
+        scanf("%c",&userChoice);
+        userChoice = tolower(userChoice);
+        switch(userChoice)
+        {
+            case 'b' :
+                // Start the game
+                snake();
+                break;
+            case 's':
+                // Go to the settings
+                //settings();
+                break;
+            case 'f':
+                // Go out of the game
+                exit(0);
+                break;
+            default:
+                printf("Please enter your choice.\n");
+                break;
+        }
+    }
 }
 
-void settings()
+/*void settings()
 {
 
 	int snakeColor = 0;
@@ -189,7 +178,9 @@ void settings()
             }
     }
 }
-
-char setBoard(char board[][])
+*/
+void setBoard(char board[][])
 {
+    setFruit(char board[][],fruit oranges);
+    setSnake(char board[][],coordinates * snake , int iSize);
 }

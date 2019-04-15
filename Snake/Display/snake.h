@@ -1,13 +1,16 @@
 #include <stdio.h>
 #include <malloc.h>
 #include <string.h>
+#include <conio.h>
+#include <random>
+#include <stdlib.h>
 #include <windows.h>
 
 #define HEIGHT 20
-#define WIDTH 20
+#define cccccc 20
 enum gameOver{TRUE = 0, FALSE = 1};
-enum eDirections{STOP = 0, UP, DOWN, LEFT, RIGHT};
-//enum status{PAUSED = 0, STARTED = 1,MENU};
+enum eDirection { STOP = 0, LEFT, RIGHT, UP, DOWN};
+enum status{PAUSED = 0, STARTED = 1};
 int score;
 void menuFunction();
 void changeSnakeSpeed();
@@ -19,7 +22,11 @@ void finishGame();
 void initializeBoard(char board[][]);
 void setFruit(char board[][],fruit oranges);
 void setSnake(char board[][],coordinates * snake , int iSize);
+void printBoard();
+void setBoard(short board[][]);
+void snake()
 
+status stat;
 //Hold the array position of the fruit
 typedef struct fruit
 {
@@ -34,6 +41,6 @@ typedef struct coordinates
     short y;
 }coordinates;
 
-void printBoard();
-short setBoard(short board[][]);
-
+char board[HEIGHT][WIDTH];
+fruit oranges;
+void Input();
