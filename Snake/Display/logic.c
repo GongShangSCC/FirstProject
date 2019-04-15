@@ -1,6 +1,7 @@
 #include "snake.h"
 
-void Input() {
+void Input()
+{
 	if (_kbhit()) {
 		switch (_getch()) {
 		case 'a':
@@ -20,6 +21,7 @@ void Input() {
 }
 void fruitPosition()
 {
+        srand((unsigned) time(&t));
 		oranges.x = rand() % WIDTH;
 		oranges.y = rand() % HEIGHT;
 }
@@ -27,24 +29,24 @@ void fruitPosition()
 void Logic()
 {
     coordinates tmp;
-    tmp.x = snake[length].x;
-    tmp.y = snake[length].y;
+    tmp.x = snake[info[0].length].x;
+    tmp.y = snake[info[0].length].y;
     int i = 0, j;
 	switch (dir)
 	{
         case LEFT:
-            if((snake[length].x - 1 == oranges.x && snake[length].y == oranges.y ))
+            if((snake[info[0].length].x - 1 == oranges.x && snake[info[0].length].y == oranges.y ))
             {
-                snake[length + 1].x = oranges.x;
-                snake[length + 1].y = oranges.y;
-                length++;
+                snake[info[0].length + 1].x = oranges.x;
+                snake[info[0].length + 1].y = oranges.y;
+                info[0].length++;
                 fruitPosition();
-                score++;
+                info[0].score++;
             }
             else
             {
-                snake[length].x--;
-                for(i = length - 1;i >= 0;i--)
+                snake[info[0].length].x--;
+                for(i = info[0].length - 1;i >= 0;i--)
                 {
                     j = snake[i].x;
                     snake[i].x = tmp.x;
@@ -57,11 +59,18 @@ void Logic()
 
             break;
         case RIGHT:
-            if((snake[length].x + 1 == oranges.x && snake[length].y == oranges.y ))
+            if((snake[info[0].length].x + 1 == oranges.x && snake[info[0].length].y == oranges.y ))
+            {
+                snake[info[0].length + 1].x = oranges.x;
+                snake[info[0].length + 1].y = oranges.y;
+                info[0].length++;
+                fruitPosition();
+                info[0].score++;
+            }
             else
             {
-                snake[length].x++;
-                for(i = length - 1;i >= 0;i--)
+                snake[info[0].length].x++;
+                for(i = info[0].length - 1;i >= 0;i--)
                 {
                     j = snake[i].x;
                     snake[i].x = tmp.x;
@@ -73,11 +82,18 @@ void Logic()
             }
             break;
         case UP:
-            if((snake[length].x == oranges.x && snake[length].y - 1 == oranges.y ))
+            if((snake[info[0].length].x == oranges.x && snake[info[0].length].y - 1 == oranges.y ))
+            {
+                snake[info[0].length + 1].x = oranges.x;
+                snake[info[0].length + 1].y = oranges.y;
+                info[0].length++;
+                fruitPosition();
+                info[0].score++;
+            }
             else
             {
-                snake[length].y--;
-                for(i = length - 1;i >= 0;i--)
+                snake[info[0].length].y--;
+                for(i = info[0].length - 1;i >= 0;i--)
                 {
                     j = snake[i].x;
                     snake[i].x = tmp.x;
@@ -89,11 +105,19 @@ void Logic()
             }
             break;
         case DOWN:
-            if((snake[length].x == oranges.x && snake[length].y + 1 == oranges.y ))
+            if((snake[info[0].length].x == oranges.x && snake[info[0].length].y + 1 == oranges.y ))
+            {
+
+                snake[info[0].length + 1].x = oranges.x;
+                snake[info[0].length + 1].y = oranges.y;
+                info[0].length++;
+                fruitPosition();
+                info[0].score++;
+            }
             else
             {
-                snake[length].y++;
-                for(i = length - 1;i >= 0;i--)
+                snake[info[0].length].y++;
+                for(i = info[0].length - 1;i >= 0;i--)
                 {
                     j = snake[i].x;
                     snake[i].x = tmp.x;
@@ -105,13 +129,13 @@ void Logic()
             }
             break;
 	}
-	if (snake[length].x >= WIDTH)
-		snake[length].x = 0;
-	if (snake[length].x < 0)
-		snake[length].x = WIDTH;
-	if (snake[length].y >= HEIGHT)
-		snake[length].y = 0;
-	if (snake[length].y < 0)
-		snake[length].y = HEIGHT;
+	if (snake[info[0].length].x >= WIDTH)
+		snake[info[0].length].x = 0;
+	if (snake[info[0].length].x < 0)
+		snake[info[0].length].x = WIDTH;
+	if (snake[info[0].length].y >= HEIGHT)
+		snake[info[0].length].y = 0;
+	if (snake[info[0].length].y < 0)
+		snake[info[0].length].y = HEIGHT;
 
 }

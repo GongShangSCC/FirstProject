@@ -1,11 +1,13 @@
 #include "snake.h"
 
-void snake()
+void snakes()
 {
     char userChoice;
+    info[0].length = 0;
     fruitPosition();
-    snake[length].x = 10;
-    snake[length].y = 10;
+    snake[ info[0].length].x = 10;
+    snake[ info[0].length].y = 10;
+    info[0].score = 0;
     while(1)
     {
         printf("Please choose what you want to do.\n");

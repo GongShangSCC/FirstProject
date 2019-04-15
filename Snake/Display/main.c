@@ -3,6 +3,6 @@
 
 int main()
 {
-    void snake()
+    void snakes();
     return 0;
 }

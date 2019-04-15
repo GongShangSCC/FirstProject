@@ -1,0 +1,21 @@
+# depslib dependency file v1.0
+1555349680 source:c:\users\lee flame\documents\github\firstproject\snake\display\main.c
+	"snake.h"
+
+1555351213 c:\users\lee flame\documents\github\firstproject\snake\display\snake.h
+	<stdio.h>
+	<malloc.h>
+	<string.h>
+	<conio.h>
+	<stdlib.h>
+	<windows.h>
+
+1555351551 source:c:\users\lee flame\documents\github\firstproject\snake\display\snake.c
+	"snake.h"
+
+1555351285 source:c:\users\lee flame\documents\github\firstproject\snake\display\board.c
+	"snake.h"
+
+1555351518 source:c:\users\lee flame\documents\github\firstproject\snake\display\logic.c
+	"snake.h"
+

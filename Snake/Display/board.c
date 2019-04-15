@@ -1,6 +1,6 @@
 #include "snake.h"
 
-void initializeBoard(char board[][])
+void initializeBoard()
 {
     int i = 0,j = 0;
     for(i = 0; i < HEIGHT; i++)
@@ -20,12 +20,12 @@ void setFruit()
 void setSnake()
 {
     int i = 0;
-    for(; i< length; i++)
+    for(; i< info[0].length; i++)
     {
         board[snake[i].x][snake[i].y] = '%';
     }
 }
-void isStatus()
+int isStatus()
 {
     return 1;
 }
@@ -34,14 +34,15 @@ void printBoard()
 {
     setBoard();
     int i = 0, j = 0;
-    printf("Showing Score:%d \n", score);
-    if(isGameOver())
+    printf("Showing Score:%d \n", info[0].score);
+
+    /*if(isGameOver())
     {
         system("cls");
         printf("GAMEOVER");
         exit(0);
     }
-    else if(isStatus() == 0)
+    else */if(isStatus() == 0)
     {
         system("cls");
         printf("PAUSE");
@@ -153,8 +154,8 @@ void printBoard()
     }
 }
 */
-void setBoard(char board[][])
+void setBoard()
 {
-    setFruit(char board[][],fruit oranges);
-    setSnake(char board[][],coordinates * snake , int iSize);
+    setFruit();
+    setSnake();
 }
