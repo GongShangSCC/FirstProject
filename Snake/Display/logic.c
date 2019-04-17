@@ -1,24 +1,5 @@
 #include "snake.h"
-//gonna wait on this function a bit
-/*void Input()
-{
-	if (_kbhit()) {
-		switch (_getch()) {
-		case 'a':
-			dir = LEFT;
-			break;
-		case 'd':
-			dir = RIGHT;
-			break;
-		case 'w':
-			dir = UP;
-			break;
-		case 's':
-			dir = DOWN;
-			break;
-		}
-	}
-}*/
+//Function that listens for for when the user presses a button
 void Input()
 {
     fflush(stdin);
@@ -41,6 +22,16 @@ void Input()
 		}
 	}
 }
+//Function that will grow the snake when it eats a fruit
+void buildSnake()
+{
+	snake[info[0].length + 1].x = oranges.x;
+        snake[info[0].length + 1].y = oranges.y;
+        info[0].length++;
+        fruitPosition();
+        info[0].score++;
+}
+//Function that innitializes the position of the fruit on the board using a random function
 void fruitPosition()
 {
         srand((unsigned) time(&t));
@@ -54,19 +45,19 @@ void Logic()
     tmp.x = snake[info[0].length].x;
     tmp.y = snake[info[0].length].y;
     int i = 0, j;
+/*Note, the plane is going to be x horizontal and y vertical. down adds to x and vic versa 
+and right adds to y and vice versa */
 	switch (dir)
 	{
         case UP:
             if((snake[info[0].length].x - 1 == oranges.x && snake[info[0].length].y == oranges.y ))
             {
-                snake[info[0].length + 1].x = oranges.x;
-                snake[info[0].length + 1].y = oranges.y;
-                info[0].length++;
-                fruitPosition();
-                info[0].score++;
+                buildSnake();
             }
             else
             {
+/*can logic team try to impliment the for potion of of the code using a function pointer and 
+simplify the code and reduce the redundancy*/
                 snake[info[0].length].x--;
                 for(i = info[0].length - 1;i >= 0;i--)
                 {
@@ -83,11 +74,7 @@ void Logic()
         case DOWN:
             if((snake[info[0].length].x + 1 == oranges.x && snake[info[0].length].y == oranges.y ))
             {
-                snake[info[0].length + 1].x = oranges.x;
-                snake[info[0].length + 1].y = oranges.y;
-                info[0].length++;
-                fruitPosition();
-                info[0].score++;
+                buildSnake();
             }
             else
             {
@@ -106,11 +93,7 @@ void Logic()
         case LEFT:
             if((snake[info[0].length].x == oranges.x && snake[info[0].length].y - 1 == oranges.y ))
             {
-                snake[info[0].length + 1].x = oranges.x;
-                snake[info[0].length + 1].y = oranges.y;
-                info[0].length++;
-                fruitPosition();
-                info[0].score++;
+                buildSnake();
             }
             else
             {
@@ -130,11 +113,7 @@ void Logic()
             if((snake[info[0].length].x == oranges.x && snake[info[0].length].y + 1 == oranges.y ))
             {
 
-                snake[info[0].length + 1].x = oranges.x;
-                snake[info[0].length + 1].y = oranges.y;
-                info[0].length++;
-                fruitPosition();
-                info[0].score++;
+                buildSnake();
             }
             else
             {

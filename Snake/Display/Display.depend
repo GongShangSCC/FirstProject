@@ -20,3 +20,24 @@
 1555353916 source:c:\users\lee flame\documents\github\firstproject\snake\display\logic.c
 	"snake.h"
 
+1555473152 source:/home/flamelily/Desktop/My_Home/Exercises_of_Arrays/FirstProject/Snake/Display/board.c
+	"snake.h"
+
+1555474072 /home/flamelily/Desktop/My_Home/Exercises_of_Arrays/FirstProject/Snake/Display/snake.h
+	<stdio.h>
+	<malloc.h>
+	<string.h>
+	<conio.h>
+	<stdlib.h>
+	<ctype.h>
+	<windows.h>
+
+1555473152 source:/home/flamelily/Desktop/My_Home/Exercises_of_Arrays/FirstProject/Snake/Display/main.c
+	"snake.h"
+
+1555473152 source:/home/flamelily/Desktop/My_Home/Exercises_of_Arrays/FirstProject/Snake/Display/snake.c
+	"snake.h"
+
+1555473844 source:/home/flamelily/Desktop/My_Home/Exercises_of_Arrays/FirstProject/Snake/Display/logic.c
+	"snake.h"
+
