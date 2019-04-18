@@ -1,6 +1,6 @@
 #include "snake.h"
 
-void initializeBoard()
+/*void initializeBoard()
 {
     int i = 0,j = 0;
     for(i = 0; i < HEIGHT; i++)
@@ -11,6 +11,7 @@ void initializeBoard()
         }
     }
 }
+
 
 void setFruit()
 {
@@ -25,6 +26,8 @@ void setSnake()
         board[snake[i].x][snake[i].y] = '%';
     }
 }
+
+*/
 int isStatus()
 {
     return 1;
@@ -32,17 +35,11 @@ int isStatus()
 
 void printBoard()
 {
-    setBoard();
-    int i = 0, j = 0;
+    //setBoard();
+    int i = 0, j = 0, k = 0, yep = 0;
     printf("Showing Score:%d \n", info[0].score);
 
-    /*if(isGameOver())
-    {
-        system("cls");
-        printf("GAMEOVER");
-        exit(0);
-    }
-    else */if(isStatus() == 0)
+  if(isStatus() == 0)
     {
         system("cls");
         printf("PAUSE");
@@ -50,21 +47,42 @@ void printBoard()
     else if(isStatus() == 1)
     {
        system("cls");
-        for(i = 0;i < 21;i++)
+        for(i = 0;i < info[0].WIDTH + 2;i++)
         {
             printf("#");
         }
 		printf("\n");
-        for(i = 0;i < 20;i++)
+        for(i = 0;i < info[0].HEIGHT;i++)
         {
             printf("#");
-            for(j = 0;j < 20;j++)
+
+            for(j = 0;j < info[0].WIDTH;j++)
             {
-                printf("%c", board[i][j]);
+                for (k = 0; k <= info[0].length; k++)
+                    if (snake[k].x == i  && snake[k].y == j)
+                    {
+                        yep = 1;
+                        break;
+                    }
+                    if(yep)
+                    {
+                        SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), info[0].color);
+                        printf("%c",'%');
+                        SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 7);
+                        yep = 0;
+                    }
+                    else if(oranges.x == i && oranges.y == j)
+                    {
+                        SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), info[0].color);
+                        printf("$");
+                        SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 7);
+                    }
+                    else
+                        printf(" ");
             }
             printf("#\n");
         }
-        for(i = 0;i < 22;i++)
+        for(i = 0;i < info[0].WIDTH + 2;i++)
         {
             printf("#");
         }
@@ -115,7 +133,9 @@ void printBoard()
             {
                 //changeFruitColor();
             }
-            else if(fruitColor == 2)
+            else if(fruitColor == 2)SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), info[0].color);
+                        printf("$");
+                        SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 0);
             {
                 //changeFruitColor();
             }
@@ -155,9 +175,10 @@ void printBoard()
             }
     }
 }
-*/
+
 void setBoard()
 {
     setFruit();
     setSnake();
 }
+*/

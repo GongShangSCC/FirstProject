@@ -7,8 +7,8 @@
 #include <ctype.h>
 #include <windows.h>
 #define MAX 400
-#define HEIGHT 20
-#define WIDTH 20
+//#define HEIGHT 20
+//#define WIDTH 20
 #define TRUE 1
 #define FALSE 0
 time_t t;
@@ -44,6 +44,9 @@ typedef struct statss
 {
     int score;
     int length;
+    int WIDTH;
+    int HEIGHT;
+    int color;
 }statss;
 statss info[1];
 
@@ -56,7 +59,7 @@ typedef struct coordinates
 enum eDirection dir;
 coordinates snake[MAX];
 //int length = 0;
-char board[HEIGHT][WIDTH];
+//char board[HEIGHT][WIDTH];
 fruit oranges;
 void Input();
 void Logic();

@@ -4,10 +4,14 @@ void snakes()
 {
     char userChoice;
     info[0].length = 0;
+    info[0].HEIGHT = 20;
+    info[0].WIDTH = 20;
+    info[0].color = 2;
+    info[0].score = 0;
     fruitPosition();
     snake[info[0].length].x = 10;
     snake[info[0].length].y = 10;
-    info[0].score = 0;
+
     //int c;
     while(1)
     {
@@ -21,12 +25,12 @@ void snakes()
         {
             case 'b' :
                 // Start the game
-                fruitPosition();
-                initializeBoard();
+                //fruitPosition();
+                //initializeBoard();
                 while(1)
                 {
-                        initializeBoard();
-                        setBoard();
+                        //initializeBoard();
+                        //setBoard();
                         printBoard();
                         Input();
                         Logic();

@@ -46,8 +46,8 @@ void buildSnake()
 void fruitPosition()
 {
         srand((unsigned) time(&t));
-		oranges.x = rand() % WIDTH;
-		oranges.y = rand() % HEIGHT;
+		oranges.x = rand() %  info[0].HEIGHT;
+		oranges.y = rand() %  info[0].WIDTH;
 }
 
 void Logic()
@@ -141,13 +141,13 @@ simplify the code and reduce the redundancy*/
             }
             break;
 	}
-	if (snake[info[0].length].x >= WIDTH)
+	if (snake[info[0].length].x >= info[0].HEIGHT)
 		snake[info[0].length].x = 0;
 	if (snake[info[0].length].x < 0)
-		snake[info[0].length].x = WIDTH - 1;
-	if (snake[info[0].length].y >= HEIGHT)
+		snake[info[0].length].x = info[0].HEIGHT - 1;
+	if (snake[info[0].length].y >= info[0].WIDTH)
 		snake[info[0].length].y = 0;
 	if (snake[info[0].length].y < 0)
-		snake[info[0].length].y = HEIGHT - 1;
+		snake[info[0].length].y =  info[0].WIDTH - 1;
 
 }
