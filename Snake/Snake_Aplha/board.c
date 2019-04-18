@@ -54,6 +54,7 @@ void printBoard()
         {
             printf("#");
         }
+		printf("\n");
         for(i = 0;i < 20;i++)
         {
             printf("#");

@@ -133,10 +133,10 @@ simplify the code and reduce the redundancy*/
 	if (snake[info[0].length].x >= WIDTH)
 		snake[info[0].length].x = 0;
 	if (snake[info[0].length].x < 0)
-		snake[info[0].length].x = WIDTH;
+		snake[info[0].length].x = WIDTH - 1;
 	if (snake[info[0].length].y >= HEIGHT)
 		snake[info[0].length].y = 0;
 	if (snake[info[0].length].y < 0)
-		snake[info[0].length].y = HEIGHT;
+		snake[info[0].length].y = HEIGHT - 1;
 
 }
