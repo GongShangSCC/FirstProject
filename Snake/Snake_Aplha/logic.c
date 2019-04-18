@@ -22,6 +22,17 @@ void Input()
 		}
 	}
 }
+int isGameOver()
+{
+    int g = FALSE;
+    int i = 0;
+    for (i = 0; i < info[0].length; i++)
+		if (snake[i].x == snake[info[0].length].x  && snake[i].y == snake[info[0].length].y)
+			g = TRUE;
+			return g;
+}
+
+
 //Function that will grow the snake when it eats a fruit
 void buildSnake()
 {
@@ -45,7 +56,7 @@ void Logic()
     tmp.x = snake[info[0].length].x;
     tmp.y = snake[info[0].length].y;
     int i = 0, j;
-/*Note, the plane is going to be x horizontal and y vertical. down adds to x and vic versa 
+/*Note, the plane is going to be x horizontal and y vertical. down adds to x and vic versa
 and right adds to y and vice versa */
 	switch (dir)
 	{
@@ -56,7 +67,7 @@ and right adds to y and vice versa */
             }
             else
             {
-/*can logic team try to impliment the for potion of of the code using a function pointer and 
+/*can logic team try to impliment the for potion of of the code using a function pointer and
 simplify the code and reduce the redundancy*/
                 snake[info[0].length].x--;
                 for(i = info[0].length - 1;i >= 0;i--)

@@ -41,3 +41,21 @@
 1555473844 source:/home/flamelily/Desktop/My_Home/Exercises_of_Arrays/FirstProject/Snake/Display/logic.c
 	"snake.h"
 
+1555616610 source:c:\users\lee flame\documents\github\firstproject\snake\snake_aplha\main.c
+	"snake.h"
+
+1555618514 c:\users\lee flame\documents\github\firstproject\snake\snake_aplha\snake.h
+	<stdio.h>
+	<malloc.h>
+	<string.h>
+	<conio.h>
+	<stdlib.h>
+	<ctype.h>
+	<windows.h>
+
+1555616738 source:c:\users\lee flame\documents\github\firstproject\snake\snake_aplha\board.c
+	"snake.h"
+
+1555618514 source:c:\users\lee flame\documents\github\firstproject\snake\snake_aplha\logic.c
+	"snake.h"
+

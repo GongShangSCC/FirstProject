@@ -9,9 +9,11 @@
 #define MAX 400
 #define HEIGHT 20
 #define WIDTH 20
+#define TRUE 1
+#define FALSE 0
 time_t t;
 
-//enum gameOver{TRUE = 0, FALSE = 1};
+
 enum eDirection{STOP = 0,LEFT,RIGHT,UP,DOWN};
 //num status{PAUSED = 0, STARTED = 1};
 //int score = 0;
@@ -27,6 +29,7 @@ void setFruit();
 void setSnake();
 void printBoard();
 void setBoard();
+int isGameOver();
 //void snake();
 void fruitPosition();
 

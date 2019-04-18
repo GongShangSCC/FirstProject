@@ -8,7 +8,7 @@ void snakes()
     snake[info[0].length].x = 10;
     snake[info[0].length].y = 10;
     info[0].score = 0;
-    int c;
+    //int c;
     while(1)
     {
         printf("Please choose what you want to do.\n");
@@ -30,7 +30,14 @@ void snakes()
                         printBoard();
                         Input();
                         Logic();
-                        for(c = 0; c< 10000; c++);
+                        if(isGameOver())
+                        {
+                                system("cls");
+                                fflush(stdin);
+                                printf("GameOver");
+                                break;
+                        }
+                        Sleep(200);
                 }
 
                 return;
