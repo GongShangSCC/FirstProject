@@ -21,3 +21,17 @@ void main() {
 		SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 7); //White
 			}
 }
+
+// THIS LOOP IF YOU WANT TO CHANGE TO ANOTHER COLOR
+
+#include <Windows.h>
+
+void main() {
+	
+	for (int i = 0; i < 256; i++) {
+		SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), i);
+		printf("Text Color in use: %d\n", i);
+	}
+	system("pause");
+}
+
