@@ -44,7 +44,7 @@
 1555616610 source:c:\users\lee flame\documents\github\firstproject\snake\snake_aplha\main.c
 	"snake.h"
 
-1555631994 c:\users\lee flame\documents\github\firstproject\snake\snake_aplha\snake.h
+1555800763 c:\users\lee flame\documents\github\firstproject\snake\snake_aplha\snake.h
 	<stdio.h>
 	<malloc.h>
 	<string.h>
@@ -53,12 +53,12 @@
 	<ctype.h>
 	<windows.h>
 
-1555633834 source:c:\users\lee flame\documents\github\firstproject\snake\snake_aplha\board.c
+1555803722 source:c:\users\lee flame\documents\github\firstproject\snake\snake_aplha\board.c
 	"snake.h"
 
-1555633164 source:c:\users\lee flame\documents\github\firstproject\snake\snake_aplha\logic.c
+1555802329 source:c:\users\lee flame\documents\github\firstproject\snake\snake_aplha\logic.c
 	"snake.h"
 
-1555633763 source:c:\users\lee flame\documents\github\firstproject\snake\snake_aplha\snake.c
+1555803787 source:c:\users\lee flame\documents\github\firstproject\snake\snake_aplha\snake.c
 	"snake.h"
 

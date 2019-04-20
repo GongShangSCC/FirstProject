@@ -29,6 +29,7 @@ void setFruit();
 void setSnake();
 void printBoard();
 void setBoard();
+void touchWall();
 int isGameOver();
 //void snake();
 void fruitPosition();
@@ -46,7 +47,10 @@ typedef struct statss
     int length;
     int WIDTH;
     int HEIGHT;
-    int color;
+    int snakeColor;
+    int fruitColor;
+    int speed;
+    int spike;
 }statss;
 statss info[1];
 
@@ -64,3 +68,4 @@ fruit oranges;
 void Input();
 void Logic();
 void fruitPosition();
+void restart();

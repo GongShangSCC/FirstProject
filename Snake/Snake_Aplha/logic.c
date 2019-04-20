@@ -19,6 +19,9 @@ void Input()
 		case 's':
 			dir = DOWN;
 			break;
+        case 'p':
+			dir = STOP;
+			break;
 		}
 	}
 }
@@ -26,9 +29,22 @@ int isGameOver()
 {
     int g = FALSE;
     int i = 0;
+
     for (i = 0; i < info[0].length; i++)
 		if (snake[i].x == snake[info[0].length].x  && snake[i].y == snake[info[0].length].y)
-			g = TRUE;
+			return g = TRUE;
+    if(info[0].spike)
+    {
+        if(snake[info[0].length].x >= info[0].HEIGHT)
+            g = TRUE;
+        if(snake[info[0].length].x < 0)
+            g = TRUE;
+        if(snake[info[0].length].y >= info[0].WIDTH)
+            g = TRUE;
+        if(snake[info[0].length].y < 0)
+            g = TRUE;
+    }
+
 			return g;
 }
 
@@ -141,13 +157,32 @@ simplify the code and reduce the redundancy*/
             }
             break;
 	}
-	if (snake[info[0].length].x >= info[0].HEIGHT)
-		snake[info[0].length].x = 0;
-	if (snake[info[0].length].x < 0)
-		snake[info[0].length].x = info[0].HEIGHT - 1;
-	if (snake[info[0].length].y >= info[0].WIDTH)
-		snake[info[0].length].y = 0;
-	if (snake[info[0].length].y < 0)
-		snake[info[0].length].y =  info[0].WIDTH - 1;
-
+	if(!info[0].spike)
+        touchWall();
 }
+
+void restart()
+{
+    info[0].length = 0;
+    info[0].score = 0;
+    fruitPosition();
+    snake[info[0].length].x = 10;
+    snake[info[0].length].y = 10;
+    dir = STOP;
+}
+
+void touchWall()
+{
+    if(dir)
+    {
+        if (snake[info[0].length].x >= info[0].HEIGHT)
+            snake[info[0].length].x = 0;
+        if (snake[info[0].length].x < 0)
+            snake[info[0].length].x = info[0].HEIGHT - 1;
+        if (snake[info[0].length].y >= info[0].WIDTH)
+            snake[info[0].length].y = 0;
+        if (snake[info[0].length].y < 0)
+            snake[info[0].length].y =  info[0].WIDTH - 1;
+    }
+}
+
